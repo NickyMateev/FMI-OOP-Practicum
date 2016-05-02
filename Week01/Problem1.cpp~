@@ -1,0 +1,73 @@
+#include "iostream"
+using namespace std;
+
+enum Genre
+{
+	Crime,
+	Comedy,
+	Adventure,
+	Action,
+	Educational,
+	Romance
+};
+
+struct Author
+{
+	char* name;
+	size_t age;
+};
+
+struct Book
+{
+	char* title;
+	Author author;
+	Genre genre;
+	size_t ISBN;
+	size_t numberOfPages;
+	double price;
+};
+
+void mystrcpy(char*& destination, const char* source)
+{
+	destination = new char[strlen(source) + 1];
+	for (int i = 0; i <= strlen(source); i++)
+	{
+		destination[i] = source[i];
+	}
+}
+
+void InitAuthor(Author& author, char* name, size_t age)
+{
+	mystrcpy(author.name, name);
+	author.age = age;
+}
+
+void InitBook(Book& book, char* title, const Author& author, const Genre& genre, size_t ISBN, size_t numberOfPages, double price)
+{
+	
+	mystrcpy(book.title, title);
+	InitAuthor(book.author, author.name, author.age);
+	book.genre = genre;
+	book.ISBN = ISBN;
+	book.numberOfPages = numberOfPages;
+	book.price = price;
+}
+
+void EnterAuthorInfo()
+{
+
+}
+
+int main()
+
+{
+	Book book;
+	Author author;
+	char* title = new char[100];
+	cin >> title;
+
+	//InitBook(Book, )
+	
+
+	return 0;
+}

@@ -1,0 +1,60 @@
+#include "Person.h"
+
+Person::Person()
+{
+  mystrcpy(name, "UnknownName");
+  mystrcpy(EGN, "UnknownEGN");
+}
+
+Person::Person(const char* name, const char* EGN)
+{
+  mystrcpy(this->name, name);
+  mystrcpy(this->EGN, EGN);
+}
+
+Person::Person(const Person& other)
+{
+  mystrcpy(this->name, other.name);
+  mystrcpy(this->EGN, other.EGN);
+}
+
+Person& Person::operator=(const Person& other)
+{
+  if(this != &other)
+  {
+    delete[] name;
+    delete[] EGN;
+
+    mystrcpy(this->name, other.name);
+    mystrcpy(this->EGN, other.EGN);
+  }
+  return *this;
+}
+
+Person::~Person()
+{
+  delete[] name;
+  delete[] EGN;
+}
+
+const char* Person::getName() const
+{
+  return name;
+}
+
+const char* Person::getEGN() const
+{
+  return EGN;
+}
+
+void Person::setName(const char* name)
+{
+  delete[] this->name;
+  mystrcpy(this->name, name);
+}
+
+void Person::setEGN(const char* EGN)
+{
+  delete[] this->EGN;
+  mystrcpy(this->EGN, EGN);
+}

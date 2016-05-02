@@ -1,0 +1,15 @@
+#include <iostream>
+#include "BankAccount.h"
+using namespace std;
+
+int main()
+{
+  Person p;
+  BankAccount ba(p, "123456789", 1000, "Dollars");
+  cout << "$" << ba.getBalance() << endl;
+  ba.Deposit(123);
+  ba.Withdraw(1000);
+  cout << "$" << ba.getBalance() << endl;
+
+  return 0;
+}
