@@ -1,3 +1,4 @@
+#pragma once
 #include "Shape.h"
 
 const double PI = 3.14;
