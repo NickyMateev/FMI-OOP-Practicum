@@ -40,7 +40,7 @@ int String::myStrCmp(const char* str1, const char* str2)
       else if (str1[index] > str2[index])
         return 1;
       else
-        continue;
+        index++;
     }
 
     return 0;
